@@ -1,0 +1,53 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "universal-proxy": {
+      "name": "Universal Proxy",
+      "api": "http://127.0.0.1:18080/v1",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [],
+      "models": {
+        "proxy/flash": {
+          "name": "Proxy Flash (configurable)",
+          "reasoning": false,
+          "tool_call": true,
+          "attachment": false,
+          "temperature": true,
+          "limit": { "context": 128000, "output": 8192 }
+        },
+        "proxy/heavy": {
+          "name": "Proxy Heavy Reasoning (configurable)",
+          "reasoning": true,
+          "tool_call": true,
+          "attachment": false,
+          "temperature": true,
+          "limit": { "context": 128000, "output": 8192 }
+        },
+        "proxy/hybrid": {
+          "name": "Proxy Hybrid (auto: flash⇄heavy)",
+          "reasoning": true,
+          "tool_call": true,
+          "attachment": false,
+          "temperature": true,
+          "limit": { "context": 128000, "output": 8192 }
+        },
+        "proxy/flash-default": {
+          "name": "Proxy Flash (requires config)",
+          "reasoning": false,
+          "tool_call": true,
+          "attachment": false,
+          "temperature": true,
+          "limit": { "context": 128000, "output": 8192 }
+        },
+        "proxy/heavy-default": {
+          "name": "Proxy Heavy (requires config)",
+          "reasoning": true,
+          "tool_call": true,
+          "attachment": false,
+          "temperature": true,
+          "limit": { "context": 128000, "output": 8192 }
+        }
+      }
+    }
+  }
+}

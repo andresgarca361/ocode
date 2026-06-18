@@ -1,0 +1,8 @@
+{
+  "rpm": 35,
+  "modelFlash": "opencode/big-pickle",
+  "modelHeavy": "nvidia/deepseek-ai/deepseek-v4-pro",
+  "modelFlashFallback": "nvidia/deepseek-ai/deepseek-v4-flash",
+  "modelHeavyFallback": "nvidia/z-ai/glm-5.1",
+  "autoRoute": true
+}
