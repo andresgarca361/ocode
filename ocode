@@ -8,7 +8,7 @@ import { homedir } from 'os';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-const PROJECT_ROOT = '/Users/30andgarcia/ocode';
+const PROJECT_ROOT = join(homedir(), 'ocode');
 
 const DEFAULT_CONFIG = {
   dockerImage: '',
@@ -841,7 +841,7 @@ async function main() {
     if (config.outputFormat === 'json') orbstackArgs.push('--format', 'json');
     if (config.quiet) orbstackArgs.push('--quiet');
     orbstackArgs.push(...remainingArgs);
-    const result = spawnSync('/Users/30andgarcia/.local/bin/ocode-orbstack', orbstackArgs, {
+    const result = spawnSync(join(LOCAL_BIN, 'ocode-orbstack'), orbstackArgs, {
       stdio: 'inherit',
       cwd: process.cwd()
     });
