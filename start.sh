@@ -13,7 +13,7 @@ if [ -f "$PROXY_DIR/proxy.pid" ]; then
 fi
 
 echo "[proxy] starting opencode universal proxy on port $PROXY_PORT..."
-CERT_FILE="/Users/30andgarcia/homebrew/etc/ca-certificates/cert.pem"
+CERT_FILE="$HOME/homebrew/etc/ca-certificates/cert.pem"
 if [ -f "$CERT_FILE" ]; then
   export NODE_EXTRA_CA_CERTS="$CERT_FILE"
 fi
