@@ -7,8 +7,8 @@ set -euo pipefail
 # ==============================================================
 
 # --- EDIT THIS before uploading to your GitHub repo ---
-REPO_OWNER="30andgarcia"
-REPO_NAME="opencode-bundle"
+REPO_OWNER="andresgarca361"
+REPO_NAME="ocode"
 BRANCH="main"
 BASE_URL="https://raw.githubusercontent.com/$REPO_OWNER/$REPO_NAME/$BRANCH"
 
