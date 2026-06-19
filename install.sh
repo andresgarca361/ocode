@@ -82,7 +82,13 @@ elif [ -f /etc/ssl/cert.pem ]; then
 fi
 if [ -n "${CA_CERT:-}" ]; then
   if grep -q "NODE_EXTRA_CA_CERTS" "$PROXY_DIR/start.sh" 2>/dev/null; then
-    sed -i '' "s|export NODE_EXTRA_CA_CERTS=.*|export NODE_EXTRA_CA_CERTS=\"$CA_CERT\"|" "$PROXY_DIR/start.sh"
+    if sed --version >/dev/null 2>&1; then
+      # GNU sed (Linux)
+      sed -i "s|export NODE_EXTRA_CA_CERTS=.*|export NODE_EXTRA_CA_CERTS=\"$CA_CERT\"|" "$PROXY_DIR/start.sh"
+    else
+      # BSD sed (macOS)
+      sed -i '' "s|export NODE_EXTRA_CA_CERTS=.*|export NODE_EXTRA_CA_CERTS=\"$CA_CERT\"|" "$PROXY_DIR/start.sh"
+    fi
   else
     echo "export NODE_EXTRA_CA_CERTS=\"$CA_CERT\"" >> "$PROXY_DIR/start.sh"
   fi
