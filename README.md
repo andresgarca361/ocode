@@ -55,7 +55,7 @@ opencode-bundle/
 ## Quick Install
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/YOUR_USERNAME/opencode-bundle/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/andresgarca361/ocode/main/install.sh | bash
 ```
 
 This installs:
